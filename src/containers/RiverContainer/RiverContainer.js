@@ -17,7 +17,9 @@ export default class RiverContainer extends Component {
                     weather: '',
                     wind: null,
                     high: null,
-                    low: null
+                    low: null,
+                    sunrise: null,
+                    sunset: null
                 },
 
                 {   name: 'Cheesman Canyon',
@@ -28,7 +30,9 @@ export default class RiverContainer extends Component {
                     weather: '',
                     wind: null,
                     high: null,
-                    low: null
+                    low: null,
+                    sunrise: null,
+                    sunset: null
                 },
                 {
                     name: 'Dream Stream',
@@ -39,7 +43,9 @@ export default class RiverContainer extends Component {
                     weather: '',
                     wind: null,
                     high: null,
-                    low: null
+                    low: null,
+                    sunrise: null,
+                    sunset: null
                 },
                 {   name: 'Arkansas River',
                     abbrev : 'ARKSALCO',
@@ -49,7 +55,9 @@ export default class RiverContainer extends Component {
                     weather: '',
                     wind: null,
                     high: null,
-                    low: null
+                    low: null,
+                    sunrise: null,
+                    sunset: null
                 }
             ]
         }

@@ -12,6 +12,9 @@ const RiverCard = (props) => {
                     <p>HIGH{river.high} {'\u00b0'}F</p>
                     <p>Low: {river.low} {'\u00b0'}F</p>
                     <p>Wind: {river.wind}mph</p>
+                    <p>Sunrise: {river.sunrise}</p>
+                    <p>Sunset: {river.sunset}</p>
+
                 </div>
             )
         })
