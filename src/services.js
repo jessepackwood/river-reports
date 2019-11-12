@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 export const fetchWeather = async (rivers) => rivers.map( async (river) => {
     try {
@@ -11,6 +11,8 @@ export const fetchWeather = async (rivers) => rivers.map( async (river) => {
         river.low = convertTemp(currentWeather.main.temp_min)
         river.high = convertTemp(currentWeather.main.temp_max)
         river.wind = currentWeather.wind.speed < 1 ? 1 : Math.round(currentWeather.wind.speed)
+        river.sunrise = convertTime(currentWeather.sys.sunrise)
+        river.sunset = convertTime(currentWeather.sys.sunset)
         console.log(river)
         return river
     }
@@ -22,6 +24,10 @@ export const fetchWeather = async (rivers) => rivers.map( async (river) => {
 const convertTemp = (temp) => {
     let fahrenheit = ((temp - 273.15) * 1.8) + 32
     return Math.round(fahrenheit);
+}
+
+const convertTime = (time) => {
+    return new Date(time * 1000).toLocaleTimeString()
 }
 
 const DNR_URL = 'http://dnrweb.state.co.us/DWR/DwrApiService/api/v2/telemetrystations/telemetrystation/?format=json&abbrev='
@@ -47,7 +53,7 @@ export const fetchRiver = async (rivers) => rivers.map( async (river) => {
         return await river
     }
         catch (error) {
-        return error;
+        return 'Could not update flows';
     }
 })
 
